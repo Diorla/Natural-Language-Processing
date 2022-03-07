@@ -32,6 +32,9 @@ app.get("/", (_req, res) => {
   res.sendFile(path.resolve("dist/index.html"));
 });
 
+app.get("/re", (_req, res) => {
+  res.redirect("/");
+});
 app.listen(port, () => {
   console.log(
     `Server listening at ${("http://localhost:" + port).blue.underline}`

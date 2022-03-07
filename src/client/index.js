@@ -1,4 +1,4 @@
-import "./styles/temp.scss";
+import "./styles/base.scss";
 import educationImg from "./static/education.jpg";
 import calc from "./js/calc";
 
