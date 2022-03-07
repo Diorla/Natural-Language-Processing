@@ -6,10 +6,10 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
+    "build:prod": "webpack --config webpack.prod.js",
+    "build:dev": "webpack --config webpack.dev.js --watch",
     "start": "nodemon src/server/index.js",
-    "build": "webpack --config webpack.prod.js",
-    "build:watch": "webpack --config webpack.prod.js --watch",
-    "build-dev": "webpack-dev-server --config webpack.dev.js --open"
+    "start:client": "webpack-dev-server --config webpack.dev.js --open"
   },
   "keywords": [],
   "author": "Ade Adeola",

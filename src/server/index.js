@@ -6,6 +6,7 @@ const port = 1960;
 const path = require("path");
 const webpack = require("webpack");
 const webpackDevMiddleware = require("webpack-dev-middleware");
+const apiKey = "7d279cfc933b5689fef210caafb730b0";
 
 const environment = process.env.NODE_ENV || "development";
 
@@ -35,6 +36,7 @@ app.get("/", (_req, res) => {
 app.get("/re", (_req, res) => {
   res.redirect("/");
 });
+
 app.listen(port, () => {
   console.log(
     `Server listening at ${("http://localhost:" + port).blue.underline}`
@@ -46,4 +48,14 @@ app.get("/data", (_req, res) => {
     name: "Adeola",
     language: "js",
   });
+});
+
+app.get("/form", (req, res) => {
+  // console.log(req.query);
+  const { text } = req.query;
+  if (text)
+    res.json({
+      apiKey,
+    });
+  else res.status(404);
 });
