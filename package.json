@@ -5,16 +5,28 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/server/index.js"
+    "start": "nodemon src/server/index.js",
+    "build": "webpack --config webpack.prod.js",
+    "build:watch": "webpack --config webpack.prod.js --watch",
+    "build-dev": "webpack-dev-server --config webpack.dev.js --open"
   },
   "keywords": [],
   "author": "Ade Adeola",
   "license": "ISC",
   "devDependencies": {
     "colors": "^1.4.0",
+    "concurrently": "^7.0.0",
+    "css-loader": "^6.7.0",
+    "html-webpack-plugin": "^5.5.0",
+    "node-sass": "^7.0.1",
     "nodemon": "^2.0.15",
+    "sass": "^1.49.9",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
     "webpack": "^5.70.0",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-middleware": "^5.3.1",
+    "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
     "cors": "^2.8.5",

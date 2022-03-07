@@ -1,0 +1,12 @@
+$color: red;
+
+body {
+  background-image: url("../static/education.jpg");
+  background-color: white;
+  background-blend-mode: luminosity;
+}
+
+div {
+  background-color: white;
+  color: $color;
+}

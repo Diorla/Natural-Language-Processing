@@ -4,19 +4,43 @@ const app = express();
 require("colors");
 const port = 1960;
 const path = require("path");
+const webpack = require("webpack");
+const webpackDevMiddleware = require("webpack-dev-middleware");
+
+const environment = process.env.NODE_ENV || "development";
+
+const config =
+  environment === "development"
+    ? require("../../webpack.dev.js")
+    : require("../../webpack.prod.js");
+
+const compiler = webpack(config);
+
+app.use(
+  webpackDevMiddleware(compiler, {
+    publicPath: config.output.publicPath,
+  })
+);
 
 app.use(express.json());
 
 app.use(cors());
 
-app.use(express.static("src/client/static"));
+app.use(express.static("dist"));
 
 app.get("/", (_req, res) => {
-  res.sendFile(path.resolve("src/client/views/index.html"));
+  res.sendFile(path.resolve("dist/index.html"));
 });
 
 app.listen(port, () => {
   console.log(
     `Server listening at ${("http://localhost:" + port).blue.underline}`
   );
+});
+
+app.get("/data", (_req, res) => {
+  res.json({
+    name: "Adeola",
+    language: "js",
+  });
 });
