@@ -1,7 +1,8 @@
 /**
  * It will send data using post method
  * @param {string} url api endpoint
- * @param {any} data the data that will be sent to the API endpoint
+ * @param {object} data the data that will be sent to the API endpoint
+ * @param {object} data.url the website to be analysed
  * @returns Promise<any>
  */
 export default async function postData(url = "", data = {}) {
@@ -9,6 +10,7 @@ export default async function postData(url = "", data = {}) {
     const result = await fetch(url, {
       method: "POST",
       credentials: "same-origin",
+      mode: "cors",
       headers: {
         "Content-Type": "application/json",
       },

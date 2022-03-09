@@ -8,8 +8,21 @@
   </head>
   <body>
     <form action="/form" method="get">
-      <input type="search" name="text" id="text" />
-      <button type="submit">Submit</button>
+      <!-- it may start with "http:\\" or "https:\\" -->
+      <!-- Followed by "www." which may have a number appended e.g. "www1."-->
+      <!-- The name of the website, should be at least 3 characters -->
+      <!-- Finally, .com, .org etc So, it must be at least 2 characters. It will
+        accommodate other stuff like paths /path/to/sub-url
+      -->
+      <input
+        name="link"
+        id="link"
+        pattern="(https?:\/\/)?(www\d?\.)?\w{3,}\..{2,}"
+        required
+      />
+      <div id="error"></div>
+      <button type="submit" id="submit">Submit</button>
     </form>
+    <dl id="response"></dl>
   </body>
 </html>

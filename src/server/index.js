@@ -2,11 +2,13 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 require("colors");
-const port = 1960;
+const port = 1963;
 const path = require("path");
 const webpack = require("webpack");
 const webpackDevMiddleware = require("webpack-dev-middleware");
-const apiKey = "7d279cfc933b5689fef210caafb730b0";
+const dotenv = require("dotenv");
+dotenv.config();
+const fetch = require("isomorphic-fetch");
 
 const environment = process.env.NODE_ENV || "development";
 
@@ -43,19 +45,20 @@ app.listen(port, () => {
   );
 });
 
-app.get("/data", (_req, res) => {
-  res.json({
-    name: "Adeola",
-    language: "js",
-  });
-});
+app.post("/form", async (req, res) => {
+  const { url } = req.body;
+  const response = await fetch(
+    `https://api.meaningcloud.com/sentiment-2.1&key=${process.env.API_KEY}&lang=en`,
+    {
+      method: "post",
+      body: JSON.stringify({
+        url,
+        key: process.env.API_KEY,
+      }),
+      headers: { "Content-Type": "application/json" },
+    }
+  );
+  const data = await response.json();
 
-app.get("/form", (req, res) => {
-  // console.log(req.query);
-  const { text } = req.query;
-  if (text)
-    res.json({
-      apiKey,
-    });
-  else res.status(404);
+  res.json(data);
 });

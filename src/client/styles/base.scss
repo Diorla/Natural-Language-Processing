@@ -1,13 +1,9 @@
-$color: red;
+$primary-color: #1ae0d6;
+$dark-primary-color: darken($primary-color, 10);
+$light-primary-color: lighten($primary-color, 10);
 
 body {
-  background-image: url("../static/education.jpg");
-  background-color: white;
-  background-blend-mode: luminosity;
-}
-
-div {
-  background-color: white;
-  color: $color;
-  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
