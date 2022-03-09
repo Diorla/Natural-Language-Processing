@@ -12,13 +12,15 @@ export default function handleSubmit(event) {
   ) {
     const img = document.createElement("img");
     img.src = loader;
-    document.body.appendChild(img);
+    document.querySelector("#loader-wrapper").appendChild(img);
     postData("http://localhost:1963/form", {
       url: formUrl,
     })
       .then((data) => {
+        document.querySelector("dl").innerHTML = "";
         updateInfo(data);
-        document.body.removeChild(img);
+        document.querySelector("#loader-wrapper").removeChild(img);
+        document.querySelector("h2").classList.remove("hidden");
       })
       .catch((err) => {
         document.getElementById("error").textContent = err.message;

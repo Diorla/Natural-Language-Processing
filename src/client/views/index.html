@@ -7,22 +7,45 @@
     <title>NLP</title>
   </head>
   <body>
-    <form action="/form" method="get">
-      <!-- it may start with "http:\\" or "https:\\" -->
-      <!-- Followed by "www." which may have a number appended e.g. "www1."-->
-      <!-- The name of the website, should be at least 3 characters -->
-      <!-- Finally, .com, .org etc So, it must be at least 2 characters. It will
+    <main>
+      <nav>
+        <h1>Natural Language Processing</h1>
+      </nav>
+      <form action="/form" method="get">
+        <!-- it may start with "http:\\" or "https:\\" -->
+        <!-- Followed by "www." which may have a number appended e.g. "www1."-->
+        <!-- The name of the website, should be at least 3 characters -->
+        <!-- Finally, .com, .org etc So, it must be at least 2 characters. It will
         accommodate other stuff like paths /path/to/sub-url
       -->
-      <input
-        name="link"
-        id="link"
-        pattern="(https?:\/\/)?(www\d?\.)?\w{3,}\..{2,}"
-        required
-      />
-      <div id="error"></div>
-      <button type="submit" id="submit">Submit</button>
-    </form>
-    <dl id="response"></dl>
+        <label for="link">URL</label>
+        <input
+          name="link"
+          id="link"
+          pattern="(https?:\/\/)?(www\d?\.)?\w{3,}\..{2,}"
+          placeholder="https://www.example.com"
+          required
+        />
+        <div id="error"></div>
+        <button type="submit" id="submit">Submit</button>
+      </form>
+      <div id="loader-wrapper"></div>
+      <div id="response">
+        <h2 class="hidden">Information</h2>
+        <dl></dl>
+      </div>
+      <footer>
+        <div>
+          Source:
+          <a
+            href="https://www.meaningcloud.com/developer/sentiment-analysis"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Sentiment analysis</a
+          >
+        </div>
+        <div>&copy; Adeola Ade</div>
+      </footer>
+    </main>
   </body>
 </html>

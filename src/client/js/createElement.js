@@ -5,9 +5,9 @@
  */
 export default function createElement(title, content) {
   const listTitle = document.createElement("dt");
-  listTitle.textContent = title;
+  listTitle.textContent = title.toLowerCase();
   const listContent = document.createElement("dd");
-  listContent.textContent = content;
+  listContent.textContent = content.toLowerCase();
 
   document.querySelector("dl").appendChild(listTitle);
   document.querySelector("dl").appendChild(listContent);
