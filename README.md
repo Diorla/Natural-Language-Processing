@@ -23,8 +23,7 @@ npm run test
 npm run test:watch
 ```
 
+https://loading.io/ for loading symbol
 
-Image by <a href="https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3704026" alt="static/education.jpg">Gerd Altmann</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3704026">Pixabay</a>
 
-
-https://loading.io/
+Favicon by <a href="https://iconarchive.com/artist/google.html">Google</a> at <a href="https://iconarchive.com/show/noto-emoji-people-clothing-objects-icons-by-google/12163-speech-balloon-icon.html">Iconarchive</a>
