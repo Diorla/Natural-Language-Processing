@@ -1,0 +1,14 @@
+footer {
+  background: #333;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 52px;
+  justify-content: space-evenly;
+}
+
+footer a {
+  color: cornflowerblue;
+  text-decoration: none;
+}

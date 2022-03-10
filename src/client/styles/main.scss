@@ -1,0 +1,32 @@
+main {
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+}
+
+#loader-wrapper {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#response {
+  padding: 8px;
+}
+
+dd {
+  margin-left: 16px;
+  text-transform: capitalize;
+  margin-bottom: 12px;
+}
+
+dt {
+  text-transform: capitalize;
+}
+
+dt::after {
+  content: ": ";
+}

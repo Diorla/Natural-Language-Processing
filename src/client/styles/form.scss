@@ -1,6 +1,16 @@
 form {
   display: flex;
   flex-direction: column;
+  margin-top: 8px;
+  align-items: center;
+}
+
+input {
+  border: 1px solid transparent;
+  padding: 4px;
+  margin: 4px;
+  width: clamp(160px, 80%, 360px);
+  outline: none;
 }
 
 input:valid + div {
@@ -10,4 +20,25 @@ input:valid + div {
 input:invalid + div {
   display: block;
   color: crimson;
+}
+
+input:focus {
+  border: 1px solid silver;
+}
+
+button {
+  border: none;
+  padding: 4px;
+  background: chocolate;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s linear;
+}
+
+button:hover {
+  background-color: rgb(236, 117, 32);
+}
+
+button:active {
+  background-color: rgb(156, 78, 22);
 }

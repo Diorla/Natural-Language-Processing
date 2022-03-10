@@ -12,6 +12,7 @@ export default function handleSubmit(event) {
   ) {
     const img = document.createElement("img");
     img.src = loader;
+    document.querySelector("#loader-wrapper").innerHTML = "";
     document.querySelector("#loader-wrapper").appendChild(img);
     postData("http://localhost:1963/form", {
       url: formUrl,
@@ -23,7 +24,8 @@ export default function handleSubmit(event) {
         document.querySelector("h2").classList.remove("hidden");
       })
       .catch((err) => {
-        document.getElementById("error").textContent = err.message;
+        document.querySelector("#loader-wrapper").removeChild(img);
+        document.querySelector("#loader-wrapper").textContent = err.message;
       });
   } else if (formUrl) {
     document.getElementById("error").textContent =
