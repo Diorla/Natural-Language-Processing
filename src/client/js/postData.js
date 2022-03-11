@@ -10,7 +10,6 @@ export default async function postData(url = "", data = {}) {
     const result = await fetch(url, {
       method: "POST",
       credentials: "same-origin",
-      mode: "cors",
       headers: {
         "Content-Type": "application/json",
       },
