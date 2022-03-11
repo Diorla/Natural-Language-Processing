@@ -27,7 +27,8 @@
 
 
 # Introduction
-Shows you the current weather based on your location. You can also add your feelings about the weather or anything.
+Analyses the speech pattern used in the content of the url provided.
+
 # Badges
 ![submission](https://img.shields.io/badge/submission-pending-orange)
 ![issues](https://img.shields.io/github/issues/Diorla/Natural-Language-Processing)
